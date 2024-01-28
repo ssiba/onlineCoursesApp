@@ -1,0 +1,26 @@
+.mat-card {
+    transition: transform 0.3s ease;
+}
+
+.mat-card:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+.custom-search {
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+  }
+  .custom-search:focus {
+    outline: none;
+    border-color: #5cb85c; 
+    box-shadow: 0 0 8px rgba(92, 184, 92, 0.6); 
+  }
+  
+  
+
+  

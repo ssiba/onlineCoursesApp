@@ -1,0 +1,30 @@
+
+  <div class="row">
+    <div class="left-side">
+      <mat-grid-list cols="4" gutterSize="20px">
+        <mat-grid-tile *ngFor="let item of cartItems">
+          <mat-card class="mat-card mb-4">
+            <mat-card-content>
+              <h5 class="card-title">{{ item.courseName }}</h5>
+              <p class="card-text">Author: {{ item.author }}</p>
+              <p class="card-text">Price: {{ item.actualPrice }}</p>
+              <p class="card-text">Discount: {{ item.discountPercentage }}</p>
+              <p class="card-text">Tags: {{ item.tags.join(', ') }}</p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button color="primary" (click)="moveToWishlist(item)">Move To Wishlist</button>
+              <button mat-button color="warn" (click)="deleteItem(item)">Delete</button>
+            </mat-card-actions>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  
+    <div class="right-side">
+      <div class="price-card">
+        <h3>Total Cart Value: ₹{{ totalCartValue }}</h3>
+        <button mat-raised-button color="primary" (click)="checkout()">Checkout</button>
+      </div>
+    </div>
+  </div>
+  

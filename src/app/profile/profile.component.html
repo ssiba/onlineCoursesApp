@@ -1,0 +1,62 @@
+<mat-card class="profile-card">
+  <form [formGroup]="profileForm" (ngSubmit)="submitProfile()">
+    <mat-form-field appearance="fill">
+      <mat-label>Display Name *</mat-label>
+      <input matInput formControlName="displayName" [value]="userName" [readonly]="true">
+      <mat-error *ngIf="profileForm.get('displayName').invalid && profileForm.get('displayName').touched">
+        Display Name is required.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>First Name *</mat-label>
+      <input matInput formControlName="firstName" required>
+      <mat-error *ngIf="profileForm.get('firstName').invalid && profileForm.get('firstName').touched">
+        First Name is required.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastName">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>About Yourself (Max 100 characters)</mat-label>
+      <textarea matInput formControlName="about" maxlength="100"></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Your Area of Interest</mat-label>
+      <mat-select formControlName="areaOfInt">
+        <mat-option value="development">Development</mat-option>
+        <mat-option value="testing">Testing</mat-option>
+        <mat-option value="designing">Designing</mat-option>
+        <mat-option value="business">Business Analyst</mat-option>
+        <mat-option value="managingTeams">Managing Teams</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Are you a student or a professional?</mat-label>
+      <mat-select formControlName="role">
+        <mat-option value="student">Student</mat-option>
+        <mat-option value="professional">Professional</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div *ngIf="profileForm.get('role').value === 'professional'">
+      <mat-form-field appearance="fill">
+        <mat-label>Experience</mat-label>
+        <mat-select formControlName="experience">
+          <mat-option value="0-5">0-5</mat-option>
+          <mat-option value="5-10">5-10</mat-option>
+          <mat-option value="10+">10 & above</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Expertise</mat-label>
+        <mat-select formControlName="expertise">
+          <mat-option value="backend">Back end</mat-option>
+          <mat-option value="frontend">Front end</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <button mat-raised-button color="primary" type="submit">Save</button>
+  </form>
+</mat-card>

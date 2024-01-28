@@ -1,0 +1,21 @@
+.profile-card {
+    width: 400px; 
+    margin: auto; 
+    padding: 20px; 
+    box-sizing: border-box; 
+  
+  
+    display: flex;
+    flex-direction: column;
+  }
+  
+  mat-form-field {
+    margin-bottom: 20px;
+    width:333px
+  }
+
+  button[type="submit"] {
+    width: 100%; 
+    margin-top: 10px; 
+  }
+  
